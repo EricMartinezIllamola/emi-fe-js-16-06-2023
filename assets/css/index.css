@@ -8,14 +8,15 @@ body {
     background-color: red;
     padding: 0px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 header {
     width: 100%;
     height: 10vh;
     background-color: black;
-    position: fixed; top: 0px;
+    position: fixed;
+    top: 0px;
 }
 
 ul {
@@ -48,8 +49,39 @@ section {
     padding-left: 3vh;
 }
 
-#Home {
-    background-color: greenyellow;
+.home {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro {
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 60px;
+}
+
+.intro_a {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#intro_1 {
+    font-size: xx-large;
+}
+
+.snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(white, white);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px white);
 }
 
 #Objetivos {
@@ -76,7 +108,8 @@ footer {
     width: 100%;
     height: 10vh;
     background-color: black;
-    position: fixed; bottom: 0px;
+    position: fixed;
+    bottom: 0px;
     color: white;
     display: flex;
     align-items: center;
