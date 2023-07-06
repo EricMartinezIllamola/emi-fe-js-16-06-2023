@@ -47,7 +47,7 @@ section {
 }
 
 .home {
-    background-color: black;
+    background-color: rgb(19, 16, 16);
     display: flex;
     flex-direction: column;
     align-items: center;
