@@ -19,21 +19,18 @@ header {
     top: 0px;
 }
 
-ul {
+header ul {
     list-style-type: none;
-    margin: 0px;
     margin-top: 10px;
     padding: 0px;
-    overflow: hidden;
-    background-color: black;
     display: flex;
 }
 
-li {
-    width: 100%;
+header ul li {
+    width: 20%;
 }
 
-li a {
+header ul li a {
     display: block;
     color: white;
     text-decoration: none;
@@ -52,8 +49,23 @@ section {
 .home {
     background-color: black;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    position: relative;
+}
+
+.btn_start {
+    height: 70px;
+    width: 70px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-top: 10%;
+    margin-bottom: 50px;
+}
+
+.btn_start a {
+    color: white;
+    font-size: 50px;
 }
 
 .intro {
@@ -75,15 +87,6 @@ section {
     font-size: xx-large;
 }
 
-.snowflake {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: linear-gradient(white, white);
-    border-radius: 50%;
-    filter: drop-shadow(0 0 10px white);
-}
-
 #Objetivos {
     background-color: red;
 }
@@ -102,16 +105,64 @@ section {
 
 #Contactar {
     background-color: purple;
+    height: 90vh;
 }
 
 footer {
     width: 100%;
     height: 10vh;
     background-color: black;
-    position: fixed;
-    bottom: 0px;
     color: white;
     display: flex;
     align-items: center;
     padding-left: 5vh;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.span_menu {
+    background-color: black;
+    color: white;
+    font-size: 35px;
+}
+
+.btn_menu {
+    background-color: black;
+    border: 0;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .btn_menu {
+        display: block;
+    }
+    header ul {
+        position: fixed;
+        width: 100%;
+        height: 91vh;
+        background: rgb(44, 44, 4);
+        top: 8vh;
+        left: -100%;
+        flex-direction: column;
+        justify-content: center;
+        /* transition: all .5s; */
+    }
+    header ul li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mostrar_menu {
+        left: 0;
+    }
 }
