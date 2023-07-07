@@ -36,6 +36,35 @@ header ul li a {
     text-decoration: none;
     padding: 14px 16px;
     text-align: center;
+    position: relative;
+}
+
+header ul li a::before {
+    content: "";
+    position: absolute;
+    background-color: blue;
+    transform: scale(0);
+    transform-origin:left;
+    transition: all 500ms;
+}
+
+header ul li a:hover::before{
+    transform: scale(1);
+    transition: all 500ms;
+}
+
+header ul li a::after {
+    content: "";
+    position: absolute;
+    border: 1px white solid;
+    transform: scale(1);
+    transform-origin:left;
+    transition: all 500ms;
+}
+
+header ul li a:hover::after {
+    transform: scale(0);
+    transition: all 500ms;
 }
 
 li ul {
