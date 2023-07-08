@@ -1,11 +1,22 @@
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
 body {
     margin: 0px;
+}
+
+section h1 {
+    color: #16151C;
 }
 
 .container-fluid {
     height: 100vh;
     width: 100%;
-    background-color: red;
     padding: 0px;
     display: flex;
     flex-direction: column;
@@ -13,7 +24,7 @@ body {
 
 header {
     width: 100%;
-    height: 10vh;
+    height: 11vh;
     background-color: #16151C;
     position: fixed;
     top: 0px;
@@ -39,32 +50,50 @@ header ul li a {
     position: relative;
 }
 
+header ul li a:hover {
+    color: red;
+}
+
 header ul li a::before {
     content: "";
     position: absolute;
-    background-color: blue;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
+    background: linear-gradient(180deg, white 0, transparent 95%);
+    transition: transform 400ms;
     transform: scale(0);
-    transform-origin:left;
-    transition: all 500ms;
+    transform-origin: right;
 }
 
 header ul li a:hover::before{
+    transition: transform 400ms;
+    transform-origin: left;
     transform: scale(1);
-    transition: all 500ms;
 }
 
 header ul li a::after {
     content: "";
     position: absolute;
-    border: 1px white solid;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+    box-sizing: border-box;
+    transition: transform 400ms;
     transform: scale(1);
-    transform-origin:left;
-    transition: all 500ms;
+    transform-origin: bottom left;
 }
 
 header ul li a:hover::after {
+    transition: transform 400ms;
     transform: scale(0);
-    transition: all 500ms;
+    transform-origin: top right;
 }
 
 li ul {
@@ -102,10 +131,16 @@ section {
 
 .home {
     background-color: #16151C;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+#Expand {
+    background-color: #16151C;
+    height: 20vh;
 }
 
 .btn_start {
@@ -116,15 +151,16 @@ section {
     margin-bottom: 50px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .btn_start::before {
     content: "";
     position: absolute;
     inset: -10px 75px;
-    background: linear-gradient(180deg, green, red);
-    transition: 2000ms;
-    animation: rotate 650ms linear infinite;
+    background: linear-gradient(90deg, green, red);
+    transition: 1500ms;
+    animation: rotate 2000ms linear infinite;
 }
 
 .btn_start:hover::before {
@@ -160,15 +196,15 @@ section {
 }
 
 #Objetivos {
-    background-color: rgb(146, 172, 115);
+    background-color: white;
 }
 
 #SoftSkills {
-    background-color: yellow;
+    background: linear-gradient(120deg, yellow 0, green 60%, transparent 98% );
 }
 
 #HardSkills {
-    background-color: darkblue;
+    background: linear-gradient(120deg, #16151C 0, darkred 10%, red 55%, rgb(199, 129, 129) 80%, transparent 98% );
 }
 
 #Experiencia {
@@ -177,25 +213,16 @@ section {
 
 #Contactar {
     background-color: purple;
-    height: 90vh;
+    height: 100vh;
 }
 
 footer {
-    width: 100%;
-    height: 10vh;
     background-color: #16151C;
     color: white;
-    display: flex;
-    align-items: center;
     padding-left: 5vh;
-}
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 48
+    /* display: flex;
+    align-items: center; */
 }
 
 .span_menu {
@@ -222,7 +249,7 @@ footer {
         position: fixed;
         width: 100%;
         height: 91vh;
-        background: rgb(44, 44, 4);
+        background: #16151C;
         top: 8vh;
         left: -100%;
         flex-direction: column;
@@ -235,6 +262,20 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    header ul li a {
+    width: 106px;
+    height: 90%;
+    }
+
+    header ul li a::after {
+        border-bottom: 0px transparent solid;
+        transform-origin: top left;
+    }
+
+    header ul li a:hover::after {
+        transform-origin: bottom right;
     }
 
     .mostrar_menu {
@@ -250,20 +291,8 @@ footer {
     0% {
         transform: rotate(0);
     }
-    80% {
-        transform: rotate(360deg);
-    }
+
     100% {
         transform: rotate(360deg);
     }
 }
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(180deg);
-    }
-}
-
