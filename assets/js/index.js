@@ -21,12 +21,14 @@ btn_start.addEventListener("click", () => {
     location.href='#Objetivos'
 });
 
+const total_card = document.querySelector(".total_card");
 const perfil_card = document.querySelector(".perfil_card");
-const card_backside = document.querySelector(".card_backside");
+// const card_backside = document.querySelector(".card_backside");
 const card_page = document.querySelector(".card_page");
 
-perfil_card.addEventListener("click", () => {
-    perfil_card.classList.toggle("perfil_card_invi");
-    card_backside.classList.toggle("card_backside_show");
+total_card.addEventListener("click", () => {
+    total_card.classList.toggle("total_card_click");
+    perfil_card.classList.toggle("perfil_card_click");
+    // card_backside.classList.toggle("card_backside_show");
     card_page.classList.toggle("card_page_show");
 });

@@ -16,7 +16,7 @@ body {
 
 section h1 {
     color: #16151C;
-    margin-top: 15vh;
+    margin-top: 14vh;
     text-align: center;
 }
 
@@ -35,11 +35,12 @@ header {
     background-color: #16151C;
     position: fixed;
     top: 0px;
+    z-index: 8;
 }
 
 header ul {
     list-style-type: none;
-    /* margin-top: 10px; */
+    margin-top: 9px;
     padding: 0px;
     display: flex;
 }
@@ -69,15 +70,16 @@ header ul li a::before {
     left: 0;
     width: 100%;
     height: 100%;
-        /* z-index: -1; */
-    background: linear-gradient(180deg, white 0, transparent 95%);
-    transition: transform 400ms;
+    z-index: -1;
+    /* background: linear-gradient(30deg, darkgreen 0, rgb(5, 219, 5) 30%, rgb(241, 45, 45) 70%, darkred 100%); */
+    background-color: white;
+    transition: transform 700ms;
     transform: scale(0);
-    transform-origin: right;
+    transform-origin: top;
 }
 
-header ul li a:hover::before{
-    transition: transform 400ms;
+header ul li a:hover::before {
+    transition: transform 700ms;
     transform-origin: left;
     transform: scale(1);
 }
@@ -93,15 +95,15 @@ header ul li a::after {
     border-top: 1px white solid;
     border-bottom: 1px white solid;
     box-sizing: border-box;
-    transition: transform 400ms;
+    transition: transform 700ms;
     transform: scale(1);
     transform-origin: bottom left;
 }
 
 header ul li a:hover::after {
-    transition: transform 400ms;
+    transition: transform 700ms;
     transform: scale(0);
-    transform-origin: top right;
+    transform-origin: right;
 }
 
 li ul {
@@ -144,6 +146,7 @@ section {
     flex-direction: column;
     align-items: center;
     position: relative;
+    z-index: 10;
 }
 
 #Expand {
@@ -211,61 +214,48 @@ section {
 }
 
 #Objetivos {
-    background-color: rgba(3, 99, 35, 0.295);
+    background-color: white;
+}
+
+.total_card {
+    width: 350px;
+    height: 400px;
+    position: relative;
+    left: 50%;
+    top: 0px;
+    z-index: 3;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) translateX(-50%);
+}
+
+/* translateX(50%) */
+
+.total_card_click {
+    transform: perspective(1000px) translateX(0%) rotateY(-180deg);
+    transition: transform 1000ms;
 }
 
 .perfil_card {
     width: 350px;
     height: 400px;
-    background-color: rgb(0, 0, 167);
-    position: relative;
-    left: 500px;
-    transform-origin: left;
+    background-color: #16151C;
+    position: absolute;
+    top: 30px;
     transform-style: preserve-3d;
-    transform: perspective(1000px);
-    box-shadow: 10px 20px 40px #16151C;
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.5);
     color: white;
-    transition: 1000ms;
-    /* backface-visibility: hidden; */
-}
-
-.perfil_card_invi {
-    transform: rotateY(-180deg);
-    left: 670px;
-}
-
-.card_backside {
-    width: 350px;
-    height: 400px;
-    background-color: white;
-    color: #16151C;
-    position: absolute;
-    left: -350px;
-    top: 0px;
-    display: none;
-}
-
-.card_backside_show {
-    display: block;
-}
-
-.card_page {
-    width: 350px;
-    height: 400px;
-    background-color: red;
-    position: absolute;
-    display: none;
-}
-
-.card_page_show {
-    display: block;
+    z-index: 5;
+    backface-visibility: hidden;
+    transform-origin: right;
+    transform-style: preserve-3d;
 }
 
 .foto_perfil {
     background-image: url(../img/Imagen_Perfil.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 120px;
+    height: 100px;
     width: 80px;
     border-radius: 0%;
     position: absolute;
@@ -273,18 +263,51 @@ section {
     top: 30px;
 }
 
-.ul_perfil_1, .ul_perfil_2 {
+.ul_perfil_1,
+.ul_perfil_2 {
     list-style-type: none;
     position: absolute;
 }
 
-.ul_perfil_1{
+.ul_perfil_1 {
     top: 60px;
     right: 50px;
 }
+
 .ul_perfil_2 {
     bottom: 50px;
     right: 20px;
+}
+
+.card_backside {
+    width: 350px;
+    height: 400px;
+    background-color: #16151C;
+    color: white;
+    position: absolute;
+    top: 30px;
+    transform: rotateY(180deg);
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.5);
+    padding: 10px 25px 0px 25px;
+}
+
+.card_page {
+    width: 350px;
+    height: 400px;
+    background-color: #16151C;
+    color: white;
+    position: relative;
+    left: 50%;
+    top: -56.3%;
+    transform: translateX(-50%);
+    transform-style: preserve-3d;
+    box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.5);
+    padding: 10px 25px 0px 25px;
+}
+
+.card_page_show {
+    transform: translateX(0%);
+    transition: transform 1100ms;
 }
 
 #HardSkills {
@@ -300,109 +323,112 @@ section {
 }
 
 .row span {
+    /* width: 19%; */
     font-size: 20px;
     margin-bottom: 10px;
+    background-color: darkgreen;
+    color: white;
 }
 
 .row {
     height: 85px;
     margin-left: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.img_A1{
+.img_A1 {
     background-image: url(../img/powerbi.png);
 }
 
-.img_A2{
+.img_A2 {
     background-image: url(../img/machinelearning.webp);
 }
 
-.img_A3{
+.img_A3 {
     background-image: url(../img/python.png);
 }
 
-.img_A4{
+.img_A4 {
     background-image: url(../img/rstudio.png);
 }
 
-.img_A5{
+.img_A5 {
     background-image: url(../img/visualstudio.png);
 }
 
-.img_B1{
+.img_B1 {
     background-image: url(../img/sqlserver.png);
 }
 
-.img_B2{
+.img_B2 {
     background-image: url(../img/mysql.png);
 }
 
-.img_B3{
+.img_B3 {
     background-image: url(../img/mongodb.png);
 }
 
-.img_B4{
+.img_B4 {
     background-image: url(../img/neo4j.png);
 }
 
-.img_C1{
+.img_C1 {
     background-image: url(../img/pentaho.png);
 }
 
-.img_C2{
+.img_C2 {
     background-image: url(../img/alteryxtrifacta.png);
 }
 
-.img_C3{
+.img_C3 {
     background-image: url(../img/collibra.png);
 }
 
-.img_D1{
+.img_D1 {
     background-image: url(../img/html5.png);
 }
 
-.img_D2{
+.img_D2 {
     background-image: url(../img/css3.png);
 }
 
-.img_D3{
+.img_D3 {
     background-image: url(../img/javascript.png);
 }
 
-.img_D4{
+.img_D4 {
     background-image: url(../img/nodejs.png);
 }
 
-.img_D5{
+.img_D5 {
     background-image: url(../img/bootstrap.png);
 }
 
-.img_D6{
+.img_D6 {
     background-image: url(../img/react.png);
 }
 
-.img_D7{
+.img_D7 {
     background-image: url(../img/jquery.png);
 }
 
-.img_E1{
+.img_E1 {
     background-image: url(../img/apachehadoop.png);
 }
 
-.img_E2{
+.img_E2 {
     background-image: url(../img/apachespark.png);
 }
 
-.img_E3{
+.img_E3 {
     background-image: url(../img/aws.png);
 }
 
-.img_E4{
+.img_E4 {
     background-image: url(../img/azure.png);
 }
 
-.img_E5{
+.img_E5 {
     background-image: url(../img/github.png);
 }
 
@@ -411,10 +437,10 @@ section {
 }
 
 #SoftSkills {
-    background: linear-gradient(120deg, yellow 0, green 60%, transparent 98% );
+    background: linear-gradient(120deg, yellow 0, green 60%, transparent 98%);
 }
 
-#Contactar {    
+#Contactar {
     height: 90vh;
 }
 
@@ -460,11 +486,10 @@ footer {
         background: #16151C;
         top: 8vh;
         left: 0%;
-        /* flex-direction: column;
-        justify-content: center;
-        align-items: center; */
         transition: all 500ms;
         display: none;
+        flex-direction: column;
+        justify-content: center;
     }
 
     header ul li {
@@ -475,8 +500,8 @@ footer {
     }
 
     header ul li a {
-    width: 50%;
-    height: 90%;
+        width: 50%;
+        height: 90%;
     }
 
     header ul li a::after {
@@ -489,10 +514,10 @@ footer {
     }
 
     .mostrar_menu {
-        display: initial;
+        display: flex;
     }
 
-    #projects{
+    #projects {
         flex-direction: column;
     }
 
