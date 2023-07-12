@@ -64,8 +64,8 @@
                             laudantium consectetur blanditiis nulla a repellendus tempora natus!</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem alias fuga officia
                             laudantium consectetur blanditiis nulla a repellendus tempora natus!</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem alias fuga officia
-                        laudantium consectetur blanditiis nulla a repellendus tempora natus!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem alias fuga officia
+                            laudantium consectetur blanditiis nulla a repellendus tempora natus!</p>
                     </div>
                 </div>
                 <div class="card_page">
@@ -149,18 +149,32 @@
                 <h1>Soft Skills</h1>
             </section>
             <section id="Contactar">
-                <h1>Contactar</h1>
-                <div class="formulario">
-                    <form action="">
-                        <label for="">Nombre:</label> <br>
-                        <input type="text"> <br>
-                        <label for="">Apellidos:</label> <br>
-                        <input type="text"> <br>
-                        <label for="">E-mail:</label> <br>
-                        <input type="text"> <br>
-                        <label for="">Tu Mensaje:</label> <br>
-                        <input type="text"> <br> <br>
-                        <input type="button" value="Enviar">
+                <div class="form_box">
+                    <h1>Contactar</h1>
+                    <form name="formulario" action="confirmation.php" method="post" onsubmit="return validation()">
+                        <div class="input_box">
+                            <input type="text" id="nombre" class="nombre" name="nombre" minlength="2" maxlength="30"
+                                required pattern="[a-zA-Z\s]+" onkeyup="validarNombre()">
+                            <label for="nombre" class="">Nombre</label>
+                            <div class="error" id="errorNombre"></div>
+                        </div>
+                        <div class="input_box">
+                            <input type="text" id="email" class="email" name="email" onkeyup="validarEmail()" required pattern="[a-zA-Z\s]+">
+                            <label for="email" >Email</label>
+                            <div class="error" id="errorEmail"></div>
+                        </div>
+                        <div class="input_box">
+                            <input type="text" id="motivo" class="motivo" name="motivo" minlength="2" maxlength="30"
+                                required pattern="[a-zA-Z\s]+" onkeyup="validarNombre()">
+                            <label for="motivo">Motivo</label>
+                            <div class="error" id="errorNombre"></div>
+                        </div>
+                        <div class="input_box">
+                            <textarea name="mensaje" id="mensaje" oninput="auto_grow(this)" required pattern="[a-zA-Z\s]+"></textarea>
+                            <label for="mensaje">Mensaje</label>
+                            <div class="error" id="errorNombre"></div>
+                        </div>
+                        <input type="submit" value="Enviar">
                     </form>
                 </div>
             </section>

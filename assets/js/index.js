@@ -18,7 +18,7 @@ btn_menu.addEventListener("click", () => {
 const btn_start = document.querySelector(".btn_start");
 
 btn_start.addEventListener("click", () => {
-    location.href='#Objetivos'
+    location.href = '#Objetivos'
 });
 
 const total_card = document.querySelector(".total_card");
@@ -32,3 +32,30 @@ total_card.addEventListener("click", () => {
     // card_backside.classList.toggle("card_backside_show");
     card_page.classList.toggle("card_page_show");
 });
+
+function auto_grow(element) {
+    element.style.height = "0px";
+    element.style.height = (element.scrollHeight) + "px";
+}
+
+for (let i = 0; i < 3; i++) {
+    let input = document.querySelectorAll("input")[i];
+    let label = document.querySelectorAll("label")[i];
+    input.addEventListener("blur", () => {
+        if (input.value == "") {
+            label.classList.remove("label_up")
+        } else {
+            label.classList.add("label_up")
+        }
+    })
+}
+
+let mensaje = document.getElementById("mensaje");
+
+mensaje.addEventListener("blur", () => {
+    if (mensaje.value == "") {
+        document.querySelectorAll("label")[3].classList.remove("label_up")
+    } else {
+        document.querySelectorAll("label")[3].classList.add("label_up")
+    }
+})
