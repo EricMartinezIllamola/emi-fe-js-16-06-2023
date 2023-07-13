@@ -78,61 +78,61 @@
                 <h1>Hard Skills</h1>
                 <div class="container-fluid">
                     <div class="row">
-                        <span>Explotación de Datos:</span>
-                        <div class="col img img_A1"></div>
-                        <div class="col img img_A2"></div>
-                        <div class="col img img_A3"></div>
-                        <div class="col img img_A4"></div>
-                        <div class="col img img_A5"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
+                        <div class="col-12 span">Explotación de Datos:</div>
+                        <div class="col-12 col-sm img img_A1"></div>
+                        <div class="col-12 col-sm img img_A2"></div>
+                        <div class="col-12 col-sm img img_A3"></div>
+                        <div class="col-12 col-sm img img_A4"></div>
+                        <div class="col-12 col-sm img img_A5"></div>
+                        <div class="col img"></div>
+                        <div class="col img"></div>
+                        <div class="col img"></div>
                     </div>
                     <div class="row">
-                        <span>Bases de Datos:</span>
-                        <div class="col img img_B1"></div>
-                        <div class="col img img_B2"></div>
-                        <div class="col img img_B3"></div>
-                        <div class="col img img_B4"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
+                        <div class="col-12 span">Bases de Datos:</div>
+                        <div class="col-12 col-sm img img_B1"></div>
+                        <div class="col-12 col-sm img img_B2"></div>
+                        <div class="col-12 col-sm img img_B3"></div>
+                        <div class="col-12 col-sm img img_B4"></div>
+                        <div class="col img"></div>
+                        <div class="col img"></div>
+                        <div class="col img"></div>
+                        <div class="col img"></div>
                     </div>
                     <div class="row">
-                        <span>Gestión del Dato:</span>
-                        <div class="col img img_C1"></div>
-                        <div class="col img img_C2"></div>
-                        <div class="col img img_C3"></div>
+                        <div class="col-12 span">Gestión del Dato:</div>
+                        <div class="col-12 col-sm img img_C1"></div>
+                        <div class="col-12 col-sm img img_C2"></div>
+                        <div class="col-12 col-sm img img_C3"></div>
                         <div class="col"></div>
                         <div class="col"></div>
                         <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                        <div class="col"></div>
-                    </div>
-                    <div class="row">
-                        <span>Frontend:</span>
-                        <div class="col img img_D1"></div>
-                        <div class="col img img_D2"></div>
-                        <div class="col img img_D3"></div>
-                        <div class="col img img_D4"></div>
-                        <div class="col img img_D5"></div>
-                        <div class="col img img_D6"></div>
-                        <div class="col img img_D7"></div>
                         <div class="col"></div>
                         <div class="col"></div>
                         <div class="col"></div>
                         <div class="col"></div>
                     </div>
                     <div class="row">
-                        <span>Big Data, Cloud y GitHub:</span>
-                        <div class="col img img_E1"></div>
-                        <div class="col img img_E2"></div>
-                        <div class="col img img_E3"></div>
-                        <div class="col img img_E4"></div>
-                        <div class="col img img_E5"></div>
+                        <div class="col-12 span">Frontend:</div>
+                        <div class="col-12 col-sm img img_D1"></div>
+                        <div class="col-12 col-sm img img_D2"></div>
+                        <div class="col-12 col-sm img img_D3"></div>
+                        <div class="col-12 col-sm img img_D4"></div>
+                        <div class="col-12 col-sm img img_D5"></div>
+                        <div class="col-12 col-sm img img_D6"></div>
+                        <div class="col-12 col-sm img img_D7"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 span">Big Data, Cloud y GitHub:</div>
+                        <div class="col-12 col-sm img img_E1"></div>
+                        <div class="col-12 col-sm img img_E2"></div>
+                        <div class="col-12 col-sm img img_E3"></div>
+                        <div class="col-12 col-sm img img_E4"></div>
+                        <div class="col-12 col-sm img img_E5"></div>
                         <div class="col"></div>
                         <div class="col"></div>
                         <div class="col"></div>
@@ -165,15 +165,15 @@
                         </div>
                         <div class="input_box">
                             <input type="text" id="motivo" class="motivo" name="motivo" minlength="2" maxlength="30"
-                                required pattern="[a-zA-Z\s]+" onkeyup="validarNombre()">
+                                required pattern="[a-zA-Z\s]+" onkeyup="validarMotivo()">
                             <label for="motivo">Motivo</label>
-                            <div class="error" id="errorNombre"></div>
+                            <div class="error" id="errorMotivo"></div>
                         </div>
                         <div class="input_box">
                             <textarea name="mensaje" id="mensaje" oninput="auto_grow(this)" required
-                                pattern="[a-zA-Z\s]+"></textarea>
+                                pattern="[a-zA-Z\s]+" onkeyup="validarMensaje()"></textarea>
                             <label for="mensaje">Mensaje</label>
-                            <div class="error" id="errorNombre"></div>
+                            <div class="error" id="errorMensaje"></div>
                         </div>
                         <input type="submit" value="Enviar" id="enviar">
                     </form>

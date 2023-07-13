@@ -313,7 +313,7 @@ section {
     width: 350px;
     height: 400px;
     background-color: #16151C;
-    color: white;
+    color: rgb(247, 206, 125);
     position: absolute;
     top: 30px;
     transform: rotateY(180deg);
@@ -326,10 +326,10 @@ section {
     width: 350px;
     height: 400px;
     background-color: #16151C;
-    color: white;
+    color: rgb(247, 206, 125);
     position: relative;
     left: 50%;
-    top: -56.3%;
+    top: -49.5%;
     transform: translateX(-50%);
     transform-style: preserve-3d;
     box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.5);
@@ -349,12 +349,11 @@ section {
 .img {
     background-repeat: no-repeat;
     background-size: contain;
-    height: 50px;
-    width: fit-content;
+    height: 6vh;
     margin-left: 20px;
 }
 
-.row span {
+.row .span {
     /* width: 19%; */
     font-size: 20px;
     margin-bottom: 10px;
@@ -363,7 +362,6 @@ section {
 }
 
 .row {
-    height: 85px;
     margin-left: 60px;
     margin-right: 60px;
     margin-bottom: 10px;
@@ -605,6 +603,11 @@ form {
     color: #16151C;
 }
 
+.error {
+    position: absolute;
+    color: red;
+}
+
 footer {
     background-color: #16151C;
     color: white;
@@ -690,6 +693,18 @@ footer {
 
     li ul li {
         height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    #HardSkills {
+        height: 270vh;
+    }
+    .img {
+        margin: 0;
+    }
+    .img:not(:last-child) {
+        margin-bottom: 15px;
     }
 }
 
