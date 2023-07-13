@@ -559,6 +559,19 @@ form {
     transition-duration: 500ms;
 }
 
+#enviar {
+    height: 40px;
+    width: 100px;
+    background-color: rgba(0, 0, 255, 0.536);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+}
+
+#enviar:hover {
+    border: white 2px solid;
+}
+
 .input_box input:focus + label, #mensaje:focus + label {
     transform: translateY(-25px);
     color: orange;
