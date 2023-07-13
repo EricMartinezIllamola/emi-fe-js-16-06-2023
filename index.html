@@ -36,8 +36,8 @@
             <section class="home" id="home">
                 <div class="btn_start"></div>
                 <div class="intro" id="intro">
-                    <div class="intro_a" id="intro_1">Èric Martínez</div>
-                    <div class="intro_a" id="intro_2">Data Scientist</div>
+                    <h1 class="intro_a" id="intro_1">Èric Martínez</h1>
+                    <h3 class="intro_a" id="intro_2">Junior Data Scientist</h3>
                 </div>
             </section>
             <section id="Expand"></section>
@@ -47,16 +47,15 @@
                     <div class="perfil_card">
                         <div class="foto_perfil"></div>
                         <ul class="ul_perfil_1">
-                            <li>03-06-1994</li>
-                            <li>Lugar de residencia</li>
+                            <!-- <li>Èric Martínez</li> -->
+                            <li>Graduado en Química. Posgrado en Inteligencia de Negocio y Análisis de Datos.</li>
+                            <li></li>
                         </ul>
                         <ul class="ul_perfil_2">
-                            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque tenetur quisquam
-                                dolorem
-                                quis totam quasi accusantium qui nam inventore aperiam officiis nesciunt repellat, velit
-                                ducimus ratione deserunt harum quod odio dolores, molestias labore voluptatum
-                                laudantium.
-                            </li>
+                            <li>Apasionado de los datos, amante del queso y amigo de los perros. Junior Data Scientist,
+                                actualmente viviendo en La Garriga, Barcelona.</li>
+                            <br>
+                            <li>eric77711@gmail.com</li>
                         </ul>
                     </div>
                     <div class="card_backside">
@@ -76,7 +75,7 @@
                 </div>
             </section>
             <section id="HardSkills">
-                <h1>HardSkills</h1>
+                <h1>Hard Skills</h1>
                 <div class="container-fluid">
                     <div class="row">
                         <span>Explotación de Datos:</span>
@@ -149,7 +148,7 @@
                 <h1>Soft Skills</h1>
             </section>
             <section id="Contactar">
-                <div class="form_box">
+                <div class="form_box" id="form_box">
                     <h1>Contactar</h1>
                     <form name="formulario" action="confirmation.php" method="post" onsubmit="return validation()">
                         <div class="input_box">
@@ -159,8 +158,9 @@
                             <div class="error" id="errorNombre"></div>
                         </div>
                         <div class="input_box">
-                            <input type="text" id="email" class="email" name="email" onkeyup="validarEmail()" required pattern="[a-zA-Z\s]+">
-                            <label for="email" >Email</label>
+                            <input type="text" id="email" class="email" name="email" onkeyup="validarEmail()" required
+                                pattern="[a-zA-Z\s]+">
+                            <label for="email">Email</label>
                             <div class="error" id="errorEmail"></div>
                         </div>
                         <div class="input_box">
@@ -170,11 +170,12 @@
                             <div class="error" id="errorNombre"></div>
                         </div>
                         <div class="input_box">
-                            <textarea name="mensaje" id="mensaje" oninput="auto_grow(this)" required pattern="[a-zA-Z\s]+"></textarea>
+                            <textarea name="mensaje" id="mensaje" oninput="auto_grow(this)" required
+                                pattern="[a-zA-Z\s]+"></textarea>
                             <label for="mensaje">Mensaje</label>
                             <div class="error" id="errorNombre"></div>
                         </div>
-                        <input type="submit" value="Enviar">
+                        <input type="submit" value="Enviar" id="enviar">
                     </form>
                 </div>
             </section>

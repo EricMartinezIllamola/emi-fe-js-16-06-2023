@@ -36,6 +36,9 @@ total_card.addEventListener("click", () => {
 function auto_grow(element) {
     element.style.height = "0px";
     element.style.height = (element.scrollHeight) + "px";
+    const form = document.getElementById("form_box");
+    form.style.height = "0px";
+    form.style.height = (element.scrollHeight + 350) + "px";
 }
 
 for (let i = 0; i < 3; i++) {
