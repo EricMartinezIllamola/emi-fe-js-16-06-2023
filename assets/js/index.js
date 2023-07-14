@@ -25,23 +25,30 @@ btn_start.addEventListener("click", () => {
 //abrir-cerrar perfil card
 const total_card = document.querySelector(".total_card");
 const perfil_card = document.querySelector(".perfil_card");
-// const card_backside = document.querySelector(".card_backside");
 const card_page = document.querySelector(".card_page");
+const close = document.querySelector(".close");
 
-total_card.addEventListener("click", () => {
-    total_card.classList.toggle("total_card_click");
-    perfil_card.classList.toggle("perfil_card_click");
-    // card_backside.classList.toggle("card_backside_show");
-    card_page.classList.toggle("card_page_show");
+perfil_card.addEventListener("click", () => {
+    total_card.classList.add("total_card_click");
+    perfil_card.classList.add("perfil_card_click");
+    card_page.classList.add("card_page_show");
 });
 
-//textarea auto height
-function auto_grow(element) {
-    element.style.height = "0px";
-    element.style.height = (element.scrollHeight) + "px";
-    const form = document.getElementById("form_box");
-    form.style.height = "0px";
-    form.style.height = (element.scrollHeight + 350) + "px";
+close.addEventListener("click", () => {
+    total_card.classList.remove("total_card_click");
+    perfil_card.classList.remove("perfil_card_click");
+    card_page.classList.remove("card_page_show");
+});
+
+//expand-collapse text
+
+for (i = 0; i < 2; i++) {
+    let collapse_button = document.getElementsByClassName("collapse_button")[i];
+    let collapse_content = document.getElementsByClassName("collapse_content")[i];
+    collapse_button.addEventListener("click", () => {
+        // collapse_button.classList.toggle("collapse_active");
+        collapse_content.classList.toggle("expand_content");
+    });
 }
 
 //placeholder >> label up (normal inputs)
@@ -68,12 +75,21 @@ mensaje.addEventListener("blur", () => {
     }
 })
 
+//textarea auto height
+function auto_grow(element) {
+    element.style.height = "0px";
+    element.style.height = (element.scrollHeight) + "px";
+    const form = document.getElementById("form_box");
+    form.style.height = "0px";
+    form.style.height = (element.scrollHeight + 350) + "px";
+}
+
 //validar formulario
 
 let NombreError = EmailError = MotivoError = MensajeError = true;
 
 function mostrarError(id, mensaje) {
-    document.getElementById(id).innerHTML=mensaje;
+    document.getElementById(id).innerHTML = mensaje;
 }
 
 function validarNombre() {
@@ -90,7 +106,7 @@ function validarNombre() {
         else {
             mostrarError("errorNombre", "");
             NombreError = false;
-            localStorage.setItem("Nombre",nombre);
+            localStorage.setItem("Nombre", nombre);
         }
     }
 }
@@ -109,7 +125,7 @@ function validarEmail() {
         else {
             mostrarError("errorEmail", "");
             EmailError = false;
-            localStorage.setItem("Email",email);
+            localStorage.setItem("Email", email);
         }
     }
 }
@@ -128,7 +144,7 @@ function validarMotivo() {
         else {
             mostrarError("errorMotivo", "");
             NombreError = false;
-            localStorage.setItem("Motivo",motivo);
+            localStorage.setItem("Motivo", motivo);
         }
     }
 }
