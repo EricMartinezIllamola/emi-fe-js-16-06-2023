@@ -766,10 +766,11 @@ footer {
     header ul {
         /* position: relative; */
         width: 100%;
-        height: 150vh;
+        height: 100vh;
+        overflow-y: auto;
         background: #16151C;
-        /* top: 8vh;
-        left: 0%; */
+        /* top: 8vh; */
+        /* left: 0%; */
         transition: all 500ms;
         display: none;
         flex-direction: column;
@@ -783,7 +784,11 @@ footer {
     }
 
     .first_li {
-        margin-top: 22px;
+        margin-top: 70px;
+    }
+
+    .last_li {
+        margin-bottom: 70px;
     }
 
     header ul li a {
