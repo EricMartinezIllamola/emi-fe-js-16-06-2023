@@ -16,19 +16,13 @@ body {
     margin: 0px;
 }
 
-section h1 {
-    color: #16151C;
-    margin-top: 14vh;
-    text-align: center;
-}
-
 .container-fluid {
     height: 100%;
     width: 100%;
     padding: 0px;
     margin: 0px;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 header {
@@ -48,16 +42,18 @@ header ul {
 }
 
 header ul li {
-    width: 20%;
+    width: 14.3%;
 }
 
 header ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
     font-size: 13px;
+    height: 4em;
     text-decoration: none;
-    padding: 14px 16px;
-    text-align: center;
+    padding: 0% 0px;
     position: relative;
 }
 
@@ -118,7 +114,7 @@ li ul {
 }
 
 li ul li {
-    height: 20%;
+    /* height: 20%; */
     width: 100%;
     background-color: #16151C;
 }
@@ -127,7 +123,7 @@ li ul li a {
     text-decoration: none;
     color: white;
     /* padding: 12px auto;    */
-    display: block;
+    display: flex;
     text-align: center;
     width: 100%;
 }
@@ -143,27 +139,27 @@ section {
     overflow: hidden;
 }
 
-.home {
+#home {
     background-color: #16151C;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 10;
 }
 
-#Expand {
-    background-color: #16151C;
-    height: 20vh;
+.intro_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .btn_start {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    margin-top: 105px;
-    margin-bottom: 70px;
+    margin-bottom: 30%;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -190,11 +186,10 @@ section {
     border-radius: 50%;
 }
 
-
 .intro {
     width: 100%;
     height: 10vh;
-    margin-bottom: 60px;
+    margin-bottom: 5%;
     font-family: Garamond;
 }
 
@@ -221,6 +216,11 @@ section {
 #intro_2 {
     font-size: 11px;
     letter-spacing: 3px;
+}
+
+#expand_home {
+    background-color: #16151C;
+    height: 20vh;
 }
 
 #Objetivos {
@@ -409,8 +409,13 @@ section {
     transform: scale(1.3);
 }
 
+#expand_HardSkills {
+    height: 11vh;
+}
+
 #HardSkills {
-    height: 110vh;
+    height: auto;
+    padding-bottom: 5vh;
 }
 
 .row {
@@ -605,7 +610,10 @@ section {
 }
 
 #Contactar {
-    height: 90vh;
+    min-height: 90vh;
+    height: auto;
+    padding-top: 11vh;
+    padding-bottom: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -622,7 +630,7 @@ section {
 #form_box {
     width: 400px;
     height: 450px;
-    min-height: 450px;
+    /* min-height: 450px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -765,12 +773,12 @@ footer {
 
     header ul {
         /* position: relative; */
+        /* top: 8vh; */
+        /* left: 0%; */
         width: 100%;
         height: 100vh;
         overflow-y: auto;
         background: #16151C;
-        /* top: 8vh; */
-        /* left: 0%; */
         transition: all 500ms;
         display: none;
         flex-direction: column;
@@ -794,6 +802,7 @@ footer {
     header ul li a {
         width: 50%;
         height: auto;
+        padding: 14px 16px;
     }
 
     header ul li a::after {
@@ -809,11 +818,11 @@ footer {
         display: flex;
     }
 
-    #projects {
+    .dropdown {
         flex-direction: column;
     }
 
-    #projects ul {
+    .dropdown ul {
         display: none;
         position: relative;
         top: 0px;
@@ -822,7 +831,7 @@ footer {
         height: auto;
     }
 
-    #projects:hover ul {
+    .dropdown:hover ul {
         display: block;
     }
 

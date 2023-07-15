@@ -22,6 +22,16 @@ btn_start.addEventListener("click", () => {
     location.href = '#Objetivos'
 });
 
+//abrir-cerrar dropdown (mobile)
+for (let i = 0; i < 2; i++) {
+    const li_dropdown = document.querySelector(".dropdown")[i];
+    const content_dropdown = document.querySelector(".content_dropdown")[i];
+
+    li_dropdown.addEventListener("click", () => {
+        content_dropdown.classList.toggle("mostrar_dropdown");
+    });
+}
+
 //abrir-cerrar perfil card
 const total_card = document.querySelector(".total_card");
 const perfil_card = document.querySelector(".perfil_card");
@@ -41,7 +51,6 @@ close.addEventListener("click", () => {
 });
 
 //expand-collapse text
-
 for (i = 0; i < 2; i++) {
     let collapse_button = document.getElementsByClassName("collapse_button")[i];
     let collapse_content = document.getElementsByClassName("collapse_content")[i];
