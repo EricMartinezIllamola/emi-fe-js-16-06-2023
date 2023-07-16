@@ -23,31 +23,37 @@ btn_start.addEventListener("click", () => {
 });
 
 //abrir-cerrar dropdown (mobile)
-for (let i = 0; i < 2; i++) {
-    const li_dropdown = document.querySelector(".dropdown")[i];
-    const content_dropdown = document.querySelector(".content_dropdown")[i];
+// for (let i = 0; i < 2; i++) {
+//     const li_dropdown = document.querySelector(".dropdown")[i];
+//     const content_dropdown = document.querySelector(".content_dropdown")[i];
 
-    li_dropdown.addEventListener("click", () => {
-        content_dropdown.classList.toggle("mostrar_dropdown");
-    });
-}
+//     li_dropdown.addEventListener("click", () => {
+//         content_dropdown.classList.toggle("mostrar_dropdown");
+//     });
+// }
 
 //abrir-cerrar perfil card
 const total_card = document.querySelector(".total_card");
 const perfil_card = document.querySelector(".perfil_card");
 const card_page = document.querySelector(".card_page");
-const close = document.querySelector(".close");
+const close_card = document.querySelector(".close_card");
 
 perfil_card.addEventListener("click", () => {
     total_card.classList.add("total_card_click");
-    perfil_card.classList.add("perfil_card_click");
-    card_page.classList.add("card_page_show");
+    card_page.classList.add("card_page_click");
 });
 
-close.addEventListener("click", () => {
+close_card.addEventListener("click", () => {
     total_card.classList.remove("total_card_click");
-    perfil_card.classList.remove("perfil_card_click");
-    card_page.classList.remove("card_page_show");
+    card_page.classList.remove("card_page_click");
+    total_card.classList.remove("total_card_disappear");
+});
+
+//perfil card responsive
+const card_backside = document.querySelector(".card_backside");
+
+card_backside.addEventListener("click", () => {
+    total_card.classList.add("total_card_disappear");
 });
 
 //expand-collapse text
@@ -176,4 +182,3 @@ function validarMensaje() {
         }
     }
 }
-
